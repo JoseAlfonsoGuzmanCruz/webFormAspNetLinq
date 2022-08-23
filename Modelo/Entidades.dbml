@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="tutorial" Class="EntidadesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-VKI5V3M;Initial Catalog=tutorial;User ID=sa" SettingsObjectName="Modelo.Properties.Settings" SettingsPropertyName="tutorialConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ciudad" Member="ciudad">
+    <Type Name="ciudad">
+      <Column Name="id_ciudad" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Association Name="ciudad_persona" Member="persona" ThisKey="id_ciudad" OtherKey="ciudad_id" Type="persona" />
+    </Type>
+  </Table>
+  <Table Name="dbo.color" Member="color">
+    <Type Name="color">
+      <Column Name="id_color" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="hexadecimal" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Association Name="color_persona_color" Member="persona_color" ThisKey="id_color" OtherKey="color_id" Type="persona_color" />
+    </Type>
+  </Table>
+  <Table Name="dbo.persona" Member="persona">
+    <Type Name="persona">
+      <Column Name="id_persona" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cedula" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="apellido" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="correo" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="clave" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="ciudad_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="persona_persona_color" Member="persona_color" ThisKey="id_persona" OtherKey="id_persona" Type="persona_color" />
+      <Association Name="ciudad_persona" Member="ciudad" ThisKey="ciudad_id" OtherKey="id_ciudad" Type="ciudad" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.persona_color" Member="persona_color">
+    <Type Name="persona_color">
+      <Column Name="id_persona" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="color_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="color_persona_color" Member="color" ThisKey="color_id" OtherKey="id_color" Type="color" IsForeignKey="true" />
+      <Association Name="persona_persona_color" Member="persona" ThisKey="id_persona" OtherKey="id_persona" Type="persona" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

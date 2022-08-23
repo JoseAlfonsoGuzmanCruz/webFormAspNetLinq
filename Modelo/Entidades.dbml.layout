@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Entidades">
+  <DataContextMoniker Name="/EntidadesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="63817652-e84a-4c18-8c6d-14a29c4a4bab" absoluteBounds="0.75, 1.375, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/EntidadesDataContext/ciudad" />
+      <nestedChildShapes>
+        <elementListCompartment Id="08c5da7c-848c-43f1-a65f-9571991cf5ab" absoluteBounds="0.765, 1.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="318d5997-8918-4a58-ada3-7bad331e5c8e" absoluteBounds="3.5, 5.375, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/EntidadesDataContext/color" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e04f01b0-1a04-463d-beee-9b528ba7d32a" absoluteBounds="3.515, 5.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eb603bf9-aa72-4d63-96f5-d55eceda4b50" absoluteBounds="3.5, 0.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/EntidadesDataContext/persona" />
+      <nestedChildShapes>
+        <elementListCompartment Id="68f76b8a-1e8e-4691-a4f3-aa1c8bde37ef" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8ee0f09d-12c7-4edf-b4d2-6724fc08821f" absoluteBounds="6.25, 1.375, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/EntidadesDataContext/persona_color" />
+      <nestedChildShapes>
+        <elementListCompartment Id="007d1c38-fcb0-4e49-814d-7d138045a057" absoluteBounds="6.265, 1.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.97199625651042); (3.5 : 1.97199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EntidadesDataContext/ciudad/ciudad_persona" />
+      <nodes>
+        <classShapeMoniker Id="63817652-e84a-4c18-8c6d-14a29c4a4bab" />
+        <classShapeMoniker Id="eb603bf9-aa72-4d63-96f5-d55eceda4b50" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 6.06814697265625); (7.25 : 6.06814697265625); (7.25 : 2.56899251302083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EntidadesDataContext/color/color_persona_color" />
+      <nodes>
+        <classShapeMoniker Id="318d5997-8918-4a58-ada3-7bad331e5c8e" />
+        <classShapeMoniker Id="8ee0f09d-12c7-4edf-b4d2-6724fc08821f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 1.97199625651042); (6.25 : 1.97199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EntidadesDataContext/persona/persona_persona_color" />
+      <nodes>
+        <classShapeMoniker Id="eb603bf9-aa72-4d63-96f5-d55eceda4b50" />
+        <classShapeMoniker Id="8ee0f09d-12c7-4edf-b4d2-6724fc08821f" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
