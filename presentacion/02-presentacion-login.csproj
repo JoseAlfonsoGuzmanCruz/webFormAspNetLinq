@@ -43,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=17.1.1.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.17.1.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -69,6 +72,7 @@
   <ItemGroup>
     <Content Include="inicio.aspx" />
     <Content Include="pages\inicio\sistema.aspx" />
+    <Content Include="pages\usuarios\usuarios.aspx" />
     <Content Include="resources\css\estilos.css" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -86,6 +90,13 @@
     </Compile>
     <Compile Include="pages\inicio\sistema.aspx.designer.cs">
       <DependentUpon>sistema.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\usuarios\usuarios.aspx.cs">
+      <DependentUpon>usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\usuarios\usuarios.aspx.designer.cs">
+      <DependentUpon>usuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="resources\master\MasterPage.Master.cs">

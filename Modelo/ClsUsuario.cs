@@ -20,5 +20,22 @@ namespace Modelo
             }
             return persona;
         }
+        public static object ListaUsuarios(int usuarioId)
+        {
+            EntidadesDataContext context = new EntidadesDataContext();
+            var query = from u in context.persona
+                        join c in context.ciudad
+                        on u.ciudad_id equals c.id_ciudad
+                        where u.id_persona != usuarioId
+                        select new
+                        {
+                            Cedula = u.cedula,
+                            Nombre = u.nombre,
+                            Apellido = u.apellido,
+                            Correo = u.correo,
+                            Ciudad = c.nombre
+                        };
+            return query;
+        }
     }
 }

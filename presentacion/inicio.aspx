@@ -16,19 +16,21 @@
                 <h2>Iniciar Sesion</h2>
             </div>
         </div>
-        <form id="form1" runat="server">
-
-        <div class="form-group">
-            <asp:Label ID="lblCedula" runat="server" Text="Cedula" CssClass="control-label col-sm-2"></asp:Label>
-            <div class="col-sm-10">
-                <asp:TextBox ID="txtCedula" runat="server" CssClass="form-control"></asp:TextBox>
+        <form id="form1" runat="server" class="form-horizontal">
+            <asp:ScriptManager ID="smLogin" runat="server"></asp:ScriptManager>
+            <div class="form-group">
+                <asp:Label ID="lblCedula" runat="server" Text="Cedula" CssClass="control-label col-sm-2"></asp:Label>
+                <div class="col-sm-10">
+                    <asp:TextBox ID="txtCedula" runat="server" CssClass="form-control" MaxLength="10" TextMode="Number" CausesValidation="false"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvCedula" runat="server" ErrorMessage="Campo obligatorio" Display="None" ControlToValidate="txtCedula"></asp:RequiredFieldValidator>
+                    <ajaxToolkit:ValidatorCalloutExtender ID="vce_rfvCedula" runat="server" TargetControlID="rfvCedula"></ajaxToolkit:ValidatorCalloutExtender>
+                </div>
             </div>
-        </div>
 
             <div class="form-group">
                 <asp:Label ID="lblClave" runat="server" Text="Clave" CssClass="control-label col-sm-2"></asp:Label>
                 <div class="col-sm-10">
-                    <asp:TextBox ID="txtClave" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtClave" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
                 </div>
             </div>
             <div class="form-group">
